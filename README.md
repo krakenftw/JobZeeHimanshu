@@ -1,4 +1,4 @@
-**Joblelo** is a full-stack web application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It serves as a platform for job seekers to search for job listings and apply for positions, while employers can post job openings and manage applications.
+**JobZee** is a full-stack web application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It serves as a platform for job seekers to search for job listings and apply for positions, while employers can post job openings and manage applications.
 
 Features
 User Authentication: Secure user authentication system allows users to sign up, log in, and manage their profiles.
@@ -18,7 +18,7 @@ Install dependencies for the server:
 
 bash
 Copy code
-cd joblelo
+cd jobzee
 npm install
 Navigate to the client directory and install client-side dependencies:
 
@@ -52,7 +52,6 @@ Node.js
 Express.js
 MongoDB
 Deployment:
-Heroku (or any other platform used)
 MongoDB Atlas
 Contributing
 Contributions are welcome! If you'd like to contribute to the project, please follow these steps:
@@ -62,7 +61,5 @@ Create a new branch (git checkout -b feature/improvement).
 Make your changes and commit them (git commit -am 'Add new feature').
 Push to the branch (git push origin feature/improvement).
 Create a new Pull Request.
-License
-This project is licensed under the MIT License.
 
 Feel free to customize this README file with additional details specific to your project or any other information you'd like to include.
