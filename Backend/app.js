@@ -12,11 +12,23 @@ import { errorMiddleware } from "./middlewares/error.js";
 const app = express();
 dotenv.config({ path: "./config/config.env" });
 
-app.use(
-  cors({
-    origin: "https://jobzeegunand-1.onrender.com",
-  }),
-);
+app.use(function (req, res, next) {
+  const allowedOrigins = [
+    "http://localhost:3000",
+    "https://jobzeegunand.onrender.com",
+  ];
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+  );
+  res.header("Access-Control-Allow-credentials", true);
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, UPDATE");
+  next();
+});
 
 app.use(cookieParser());
 app.use(express.json());
