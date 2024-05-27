@@ -12,7 +12,7 @@ import { errorMiddleware } from "./middlewares/error.js";
 const app = express();
 dotenv.config({ path: "./config/config.env" });
 
-const allowedOrigins = ["https://jobzeegunand-1.onrender.com"];
+const allowedOrigins = ["https://jobzeegunand-2.onrender.com"];
 
 app.use(
   cors({
