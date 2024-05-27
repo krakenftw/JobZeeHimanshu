@@ -47,18 +47,23 @@ export const login = async (req, res, next) => {
 export const logout = async (req, res, next) => {
   try {
     res
-      .status(201)
+      .status(200)
       .cookie("token", "", {
+        expires: new Date(0), // Set the expiration to the past to clear the cookie
         httpOnly: false,
-        expires: new Date(Date.now()),
+        secure: true, // Ensure the cookie is only sent over HTTPS in production
+        sameSite: "none",
       })
       .json({
         success: true,
         message: "User logged out successfully",
       });
   } catch (err) {
-    console.log(err);
-    res.send(err);
+    console.error("Logout error", err);
+    res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+    });
   }
 };
 export const getUser = async (req, res, next) => {

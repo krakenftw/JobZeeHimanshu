@@ -13,22 +13,22 @@ const Navbar = () => {
     try {
       const response = await Axios.get(
         `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/logout`,
-        { withCredentials: true }
+        { withCredentials: true },
       );
       toast.success(response.data.message);
-      setIsAuthorized(false);
-      navigateTo("/login");
+      setIsAuthorized(false); // Ensure this state is being managed correctly
+      navigateTo("/login"); // Use the navigate function correctly
     } catch (error) {
-      toast.error(error.response.data.message);
-      setIsAuthorized(true);
+      console.error("Logout failed", error);
+      toast.error("Logout failed. Please try again.");
     }
   };
   return (
     <>
       <nav className={isAuthorized ? "navbarShow" : "navbarHide"}>
-        <div className='container'>
-          <div className='logo'>
-            <img src='/JobZee-logos__white.png' alt='logo' />
+        <div className="container">
+          <div className="logo">
+            <img src="/JobZee-logos__white.png" alt="logo" />
           </div>
           <ul className={!show ? "menu" : "show-menu menu"}>
             <li>
@@ -42,10 +42,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to={"/applications/me"}
-                onClick={() => setShow(false)}
-              >
+              <Link to={"/applications/me"} onClick={() => setShow(false)}>
                 {user && user.role === "Employer"
                   ? "APPLICANT'S APPLICATIONS"
                   : "MY APPLICATIONS"}
@@ -54,10 +51,7 @@ const Navbar = () => {
             {user && user.role === "Employer" ? (
               <>
                 <li>
-                  <Link
-                    to={"/job/post"}
-                    onClick={() => setShow(false)}
-                  >
+                  <Link to={"/job/post"} onClick={() => setShow(false)}>
                     POST NEW JOB
                   </Link>
                 </li>
@@ -72,7 +66,7 @@ const Navbar = () => {
             )}
             <button onClick={handleLogout}>Logout</button>
           </ul>
-          <div className='hamburger'>
+          <div className="hamburger">
             <GiHamburgerMenu onClick={() => setShow(!show)} />
           </div>
         </div>
