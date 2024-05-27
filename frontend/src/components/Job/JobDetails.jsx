@@ -12,7 +12,7 @@ const JobDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/job/${id}`, {
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/job/${id}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -28,10 +28,10 @@ const JobDetails = () => {
   }
 
   return (
-    <section className="jobDetail page">
-      <div className="container">
+    <section className='jobDetail page'>
+      <div className='container'>
         <h3>Job Details</h3>
-        <div className="banner">
+        <div className='banner'>
           <p>
             Title: <span> {job.title}</span>
           </p>

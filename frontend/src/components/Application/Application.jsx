@@ -34,16 +34,20 @@ const Application = () => {
     formData.append("jobId", id);
 
     try {
-      const { data } = await axios.post(
-        "http://localhost:4000/api/v1/application/post",
-        formData,
-        {
-          withCredentials: true,
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      ).catch(err=> console.log(err));
+      const { data } = await axios
+        .post(
+          `${
+            import.meta.env.VITE_BACKEND_URL
+          }/api/v1/application/post`,
+          formData,
+          {
+            withCredentials: true,
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
+        .catch((err) => console.log(err));
       setName("");
       setEmail("");
       setCoverLetter("");
@@ -63,53 +67,57 @@ const Application = () => {
   }
 
   return (
-    <section className="application">
-      <div className="container">
+    <section className='application'>
+      <div className='container'>
         <h3>Application Form</h3>
         <form onSubmit={handleApplication}>
           <input
-            type="text"
-            placeholder="Your Name"
+            type='text'
+            placeholder='Your Name'
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <input
-            type="email"
-            placeholder="Your Email"
+            type='email'
+            placeholder='Your Email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            type="number"
-            placeholder="Your Phone Number"
+            type='number'
+            placeholder='Your Phone Number'
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
           <input
-            type="text"
-            placeholder="Your Address"
+            type='text'
+            placeholder='Your Address'
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
           <textarea
-            placeholder="CoverLetter..."
+            placeholder='CoverLetter...'
             value={coverLetter}
             onChange={(e) => setCoverLetter(e.target.value)}
           />
           <div>
             <label
-              style={{ textAlign: "start", display: "block", fontSize: "20px" }}
+              style={{
+                textAlign: "start",
+                display: "block",
+                fontSize: "20px",
+              }}
             >
               Select Resume
             </label>
             <input
-              type="file"
-              accept=".pdf, .jpg, .png"
+              type='file'
+              accept='.pdf, .jpg, .png'
               onChange={handleFileChange}
               style={{ width: "100%" }}
             />
           </div>
-          <button type="submit">Send Application</button>
+          <button type='submit'>Send Application</button>
         </form>
       </div>
     </section>
