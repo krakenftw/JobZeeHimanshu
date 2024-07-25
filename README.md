@@ -13,7 +13,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/joblelo.git
+git clone https://github.com/your-username/jobzee.git
 Install dependencies for the server:
 
 bash
