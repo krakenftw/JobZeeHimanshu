@@ -12,7 +12,7 @@ import { errorMiddleware } from "./middlewares/error.js";
 const app = express();
 dotenv.config({ path: "./config/config.env" });
 
-const allowedOrigins = ["job-zee-gunand.vercel.app"];
+const allowedOrigins = ["https://job-zee-himanshu.vercel.app"];
 
 app.use(
   cors({
