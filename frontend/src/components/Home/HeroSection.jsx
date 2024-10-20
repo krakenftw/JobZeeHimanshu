@@ -37,7 +37,6 @@ const HeroSection = () => {
         <div className="title">
           <h1>Find a job that suits</h1>
           <h1>yout interest and skills</h1>
-          <p>bhesbcjsdcnklsdmcksdmcksdmcksdcmdskcmdskdsm;</p>
         </div>
         <div className='image'>
           <img src="/heroS.jpg" alt="hero" />
