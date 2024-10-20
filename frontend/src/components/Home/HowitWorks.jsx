@@ -12,17 +12,16 @@ const HowitWorks = () => {
           <div className="card">
             <FaUserPlus/>
             <p>Create Account</p>
-            <p>hfvwhejsdbcnkmlojihugyftgcvbnjkmloiuy7t</p>
           </div>
           <div className="card">
             <MdFindInPage/>
             <p>Find a Job/Post A Job</p>
-            <p>hfvwhejsdbcnkmlojihugyftgcvbnjkmloiuy7t</p>
+            
           </div>
           <div className="card">
             <IoMdSend/>
             <p>Create Account</p>
-            <p>hfvwhejsdbcnkmlojihugyftgcvbnjkmloiuy7t</p>
+            
           </div>
         </div>
       </div>
