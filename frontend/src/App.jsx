@@ -44,8 +44,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} /> bhai kya
-          change kiya???
+          <Route path='/register' element={<Register />} /> 
           <Route path='/' element={<Home />} />
           <Route path='/job/getall' element={<Jobs />} />
           <Route path='/job/:id' element={<JobDetails />} />
